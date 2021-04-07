@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!--fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" /> 
+  <!-- (CDN no usado)--> 
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">-->
+  <!--archivo bootstrap local-->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />  
+  <!--archivo css local con alguna modificaciones-->
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Jazz & Vinilos</title>
+</head>
+
+
+<body>
+  <div class="container-fluid container-md">
+    <!--logo-->
+    <nav class="navbar" style="height: 125px;">
+      <a class="navbar-brand">
+        <img src="img/logo.png" alt="" style="width: 120px; height:120px" />
+      </a>
+      <!-- link login y registro-->
+      <div class="pb-4" style="cursor: pointer; height: auto">
+        <a class="col-2 text-dark text-decoration-none border-right border-dark" data-toggle="modal"
+          data-target="#loginModal">
+          Login
+        </a>
+        <a class="col-2 text-decoration-none text-dark" data-toggle="modal" data-target="#registroModal">
+          Registro
+        </a>
+      </div>
+
+      <!-- ****Modal login****-->
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Accede a tu área personal
+              </h5>
+              <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Usuario o correo electrónico</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" />
+                  <small id="emailHelp" class="form-text text-muted">Olvidaste tu contraseña?
+                    <a href="#" class="">Pincha aqui</a></small>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                  <label class="form-check-label" for="exampleCheck1">Recordar mi cuenta</label>
+                </div>
+                <button type="submit" class="btn btn-dark">Accede</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <small class="pr-4">Aún no tienes una cuenta con nosotros?</small>
+              <button type="button" class="btn btn-dark">
+                Crea una nueva cuenta
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--**** Modal registro****-->
+      <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="signupModalLabel">
+                Registrate en Vinilos Jazz
+              </h5>
+              <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Correo electrónico</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="correo@ejemplo.com" />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Contraseña
+                    <small id="passwordHelp" class="form-text text-muted">La contraseña debe tener mínimo 6 caracteres y
+                      por lo
+                      menos un número</small>
+                  </label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword2">Confirma tu contraseña</label>
+                  <input type="password" class="form-control" id="exampleInputPassword2" />
+                </div>
+              </form>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                <label class="form-check-label" for="exampleCheck1">Recordar mi cuenta</label>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                <label class="form-check-label" for="exampleCheck2">Acepto los términos y condiciones</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <small class="pr-4">Ya tienes una cuenta con nosotros?</small>
+              <button type="button" class="btn btn-dark">
+                Accede a tu área personal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--****Menú pantalla completa y boton hamburguesa ****-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Música
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#topsales">Catálogo completo</a>
+              <a class="dropdown-item" href="#topsales">Ofertas</a>
+              <a class="dropdown-item" href="#topsales">Últimos Lanzamientos</a>
+              <a class="dropdown-item" href="#topsales">Novedades del mes</a>
+              <a class="dropdown-item" href="#topsales">Catálogo de discos clásicos</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#about">Quienes somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#newsletter">Contacto</a>
+          </li>
+        </ul>
+
+        <!--****Barra de Búsqueda****-->
+
+        <form class="form-inline from-sm my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search" />
+          <button class="btn btn-light my-2 my-sm-0" type="submit">
+            Busca
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!--****Slider 4 imágenes****-->
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" style="max-height: 500px">
+        <div class="carousel-item active">
+          <img src="img/crop-turntable_2.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption text-center text-white h-75">
+            <h5>Especialistas en Vinilos Jazz</h5>
+            <p class="d-none d-md-block">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dolorem architecto similique velit labore maxime ullam ...
+            </p>
+            <a href="#" class="btn btn-light text-center">ver mas..</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/album-crop_1.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption text-center text-white h-75">
+            <h5>Ultimos Lanzamientos</h5>
+            <p class="d-none d-md-block">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dolorem architecto similique velit labore maxime ullam quae
+              officia rem ex doloribus fugit a deleniti ducimus nisi, magni
+              corporis, dignissimos accusantium. Voluptate.
+            </p>
+            <a href="#" class="btn btn-light text-center">ver mas..</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/album-crop_2.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption text-center text-white h-75">
+            <h5>Explora nuestro blog</h5>
+            <p class="d-none d-md-block">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dolorem architecto similique velit labore maxime ullam quae
+              officia rem ex doloribus fugit a deleniti ducimus nisi, magni
+              corporis, dignissimos accusantium. Voluptate.
+            </p>
+            <a href="#" class="btn btn-light text-center">ver mas..</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/album-crop_3.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption text-center text-white h-75">
+            <h5>Navega por nuestro catalogo</h5>
+            <p class="d-none d-md-block">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dolorem architecto similique velit labore maxime ullam quae
+              officia rem ex doloribus fugit a deleniti ducimus nisi,
+            </p>
+            <a href="#" class="btn btn-light text-center">ver mas..</a>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <!--****Seccion quienes somos****-->
+    <div id="about">
+      <h3 class="pt-5 mt-5 font-weight-bolder text-center">Somos especialistas en vinilos jazz</h3>
+      <p class="text-center">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem repellendus nesciunt beatae totam nulla iste voluptas fugiat, quos ducimus ipsam architecto ab saepe excepturi veniam soluta consequatur 
+        reiciendis quia veritatis reprehenderit accusamus blanditiis! Distinctio, dolorum totam veniam non autem maxime.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem repellendus nesciunt beatae totam nulla iste voluptas fugiat, quos ducimus ipsam architecto ab saepe excepturi veniam soluta consequatur 
+        reiciendis quia veritatis reprehenderit accusamus blanditiis! Distinctio, dolorum totam veniam non autem maxime.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem repellendus nesciunt beatae totam nulla iste voluptas fugiat, quos ducimus ipsam architecto ab saepe excepturi veniam soluta consequatur 
+        reiciendis quia veritatis reprehenderit accusamus blanditiis! Distinctio, dolorum totam veniam non autem maxime.
+      </p>
+    </div>
+    
+    
+    
+    <!--****Seccion mas vendidos****-->
+    <h4 class="pt-5 mt-5 font-weight-bolder text-center">Top Ventas</h4>
+    <div class="row justify-content-around my-5" id="topsales">
+      <div class="card col-12 col-sm-2 my-3 py-3 border-0">
+        <img src="img/giant-steps.jpeg" class="card-img-top img-fluid" alt="..." />
+        <div class="card-body w-100 p-0">
+          <div class="text-left w-100 p-1">
+            <h5 class="card-title">John Coltrane- <br />Giant steps</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+            <p class="card-text">
+              Año: 1959<br />
+              Blue Note Records
+            </p>
+          </div>
+          <div class="see-more pt-4">
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+                class="fas fa-cart-plus px-2"></i>Añadir</a>
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+                class="fas fa-eye px-2"></i>Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="card col-12 col-sm-2 my-3 py-3 border-0">
+        <img src="img/Lee Morgan – Indeed! (Vinyl).jpeg" class="card-img-top img-fluid" alt="..." />
+        <div class="card-body w-100 p-0">
+          <div class="text-left w-100 p-1">
+            <h5 class="card-title">Lee Morgan- <br />Indeed!</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+            <p class="card-text">
+              Año: 1959<br />
+              Blue Note Records
+            </p>
+          </div>
+          <div class="see-more pt-4 ">
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+                class="fas fa-cart-plus px-2"></i>Añadir</a>
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+                class="fas fa-eye px-2"></i>Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="card col-12 col-sm-2 my-3  py-3 border-0">
+        <img src="img/Ella Fitzgerald - Get Ready _ Open Your Window.jpeg" class="card-img-top img-fluid" alt="..." />
+        <div class="card-body w-100 p-0">
+          <div class="text-left w-100 p-1">
+            <h5 class="card-title">Ella Fitzgerland- <br />Get ready</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+            <p class="card-text">
+              Año: 1959<br />
+              Blue Note Records
+            </p>
+          </div>
+          <div class="see-more pt-4">
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+                class="fas fa-cart-plus px-2"></i>Añadir</a>
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+                class="fas fa-eye px-2"></i>Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="card col-12 col-sm-2 my-3  py-3 border-0">
+        <img src="img/James Etta - Live At Montreux 1975 1993 (Vinyl).jpeg" class="card-img-top img-fluid" alt="..." />
+        <div class="card-body w-100 p-0">
+          <div class="text-left w-100 p-1">
+            <h5 class="card-title">Etta James- <br />Live At Montreux</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+            <p class="card-text">
+              Año: 1959<br />
+              Blue Note Records
+            </p>
+          </div>
+          <div class="see-more pt-4">
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+                class="fas fa-cart-plus px-2"></i>Añadir</a>
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+                class="fas fa-eye px-2"></i>Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="card col-12 col-sm-2 my-3  py-3 border-0">
+        <img src="img/Art Blakey and the Jazz Messengers - Moanin’ (1959).jpeg" class="card-img-top img-fluid" alt="..." />
+        <div class="card-body w-100 p-0">
+          <div class="text-left w-100 p-1">
+            <h5 class="card-title">Art Blakey- <br />Moanin’</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+            <p class="card-text">
+              Año: 1959<br />
+              Blue Note Records
+            </p>
+          </div>
+          <div class="see-more pt-4">
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+                class="fas fa-cart-plus px-2"></i>Añadir</a>
+            <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+                class="fas fa-eye px-2"></i>Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="w-100">
+          <button class="btn btn-dark btn-block" href="#">Ver mas..</button>
+        </div>
+      </div>
+      </div>
+  
+
+  <!--Seccion Novedades-->
+  <h4 class="pt-5 mt-5 font-weight-bolder text-center">Últimos Lanzamientos</h4>
+  <div class="row justify-content-around my-5" id="topsales">
+    <div class="card col-12 col-sm-2 my-3 py-3 border-0">
+      <img src="img/giant-steps.jpeg" class="card-img-top img-fluid" alt="..." />
+      <div class="card-body w-100 p-0">
+        <div class="text-left w-100 p-1">
+          <h5 class="card-title">John Coltrane- <br />Giant steps</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+          <p class="card-text">
+            Año: 1959<br />
+            Blue Note Records
+          </p>
+        </div>
+        <div class="see-more pt-4">
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+              class="fas fa-cart-plus px-2"></i>Añadir</a>
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+              class="fas fa-eye px-2"></i>Detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="card col-12 col-sm-2 my-3 py-3 border-0">
+      <img src="img/Lee Morgan – Indeed! (Vinyl).jpeg" class="card-img-top img-fluid" alt="..." />
+      <div class="card-body w-100 p-0">
+        <div class="text-left w-100 p-1">
+          <h5 class="card-title">Lee Morgan- <br />Indeed!</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+          <p class="card-text">
+            Año: 1959<br />
+            Blue Note Records
+          </p>
+        </div>
+        <div class="see-more pt-4 ">
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+              class="fas fa-cart-plus px-2"></i>Añadir</a>
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+              class="fas fa-eye px-2"></i>Detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="card col-12 col-sm-2 my-3  py-3 border-0">
+      <img src="img/Ella Fitzgerald - Get Ready _ Open Your Window.jpeg" class="card-img-top img-fluid" alt="..." />
+      <div class="card-body w-100 p-0">
+        <div class="text-left w-100 p-1">
+          <h5 class="card-title">Ella Fitzgerland- <br />Get ready</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+          <p class="card-text">
+            Año: 1959<br />
+            Blue Note Records
+          </p>
+        </div>
+        <div class="see-more pt-4">
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+              class="fas fa-cart-plus px-2"></i>Añadir</a>
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+              class="fas fa-eye px-2"></i>Detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="card col-12 col-sm-2 my-3  py-3 border-0">
+      <img src="img/James Etta - Live At Montreux 1975 1993 (Vinyl).jpeg" class="card-img-top img-fluid" alt="..." />
+      <div class="card-body w-100 p-0">
+        <div class="text-left w-100 p-1">
+          <h5 class="card-title">Etta James- <br />Live At Montreux</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+          <p class="card-text">
+            Año: 1959<br />
+            Blue Note Records
+          </p>
+        </div>
+        <div class="see-more pt-4">
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+              class="fas fa-cart-plus px-2"></i>Añadir</a>
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+              class="fas fa-eye px-2"></i>Detalles</a>
+        </div>
+      </div>
+    </div>
+    <div class="card col-12 col-sm-2 my-3  py-3 border-0">
+      <img src="img/Art Blakey and the Jazz Messengers - Moanin’ (1959).jpeg" class="card-img-top img-fluid" alt="..." />
+      <div class="card-body w-100 p-0">
+        <div class="text-left w-100 p-1">
+          <h5 class="card-title">Art Blakey- <br />Moanin’</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Vinyl LP, Reissue</h6>
+          <p class="card-text">
+            Año: 1959<br />
+            Blue Note Records
+          </p>
+        </div>
+        <div class="see-more pt-4">
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block"><i
+              class="fas fa-cart-plus px-2"></i>Añadir</a>
+          <a href="#" class="card-link text-dark text-left font-weight-bold d-block mx-0"><i
+              class="fas fa-eye px-2"></i>Detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">      
+        <button class="btn btn-dark btn-block" href="#">Ver mas..</button>
+    </div>
+    </div>
+
+  <!--Seccion blog-->
+  <h4 class="pt-5 mt-5 font-weight-bolder text-center">Últimas entradas de nuestro blog</h4>
+  <div class="row justify-content-around mt-5 p-2" id="blog">
+    <div class="col-12 col-sm-3 my-3">
+      <div class="card h-100">
+        <img class="card-img-top" src="img/album_2.jpg" alt="Card image cap" style="height: 160px;">
+        <div class="card-body">
+          <h5 class="card-title">Futuros Lanzamientos</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <a href="#" class="btn btn-dark w-50 m-3">Ir al post</a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-3 my-3">
+      <div class="card h-100">
+        <img class="card-img-top" src="img/album_card_6.jpg" alt="Card image cap" style="height: 160px;">
+        <div class="card-body">
+          <h5 class="card-title">Cómo empezar tu colección</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <a href="#" class="btn btn-dark w-50 m-3">Ir al post</a>
+      </div>
+    </div>
+    <div class="d-none d-md-block col-3 my-3">
+      <div class="card h-100">
+        <img class="card-img-top" src="img/album_card_3.jpg" alt="Card image cap" style="height: 160px;">
+        <div class="card-body">
+          <h5 class="card-title">Tips para coleccionistas</h5>
+          <p class="card-text">Some quick example text to build on the card title. and make up the bulk of the card's content.</p>        
+        </div>
+        <a href="#" class="btn btn-dark w-50 m-3">Ir al post</a>
+      </div>
+    </div>
+    <div class="d-none d-md-block col-3 my-3">
+      <div class="card h-100">
+        <img class="card-img-top" src="img/album_card_4.jpg" alt="Card image cap" style="height: 160px;">
+        <div class="card-body">
+          <h5 class="card-title">Como limpiar tus discos</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <a href="#" class="btn btn-dark w-50 m-3">Ir al post</a>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-12">      
+        <button class="btn btn-dark btn-block" href="#">Ver mas..</button>
+    </div>
+    </div>
+    
+<!--Sección Newsletter-->
+<div id="contacto" class="text-center text-white my-4 py-5" style="background-image: url(img/cropturntable_1.jpg);background-position: center;">
+  <h4 class="font-weight-bolder pt-5">
+    Suscríbete a nuestro Newsletter
+  </h4>
+  <p>
+    Mantente al día de todas las novedades de nuestra tienda.
+  </p>
+  <form class="w-75 mx-auto text-center">
+    <div class="form-group pt-5">
+      <label for="exampleFormControlInput1">Correo electrónico</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@ejemplo.com" />
+    </div>
+    <button class="btn btn-light">
+      <a class="text-dark text-decoration-none" href="#">Quiero recibir noticias</a>
+    </button>
+  </form>
+</div>
+
+<!--Sección contacto-->
+<div id="contacto" class="text-center text-white my-4 py-5" style="background-image: url(img/turntable_1.jpg);background-position: center;">
+  <h4 class="font-weight-bolder pt-5">
+    Ponte en contacto
+  </h4>
+  <p>
+    Si prefieres puedes ponerte en contacto con Vinilos Jazz mediante el siguiente formulario, <br>responderemos lo más rápido posible a tus consultas
+  </p>
+  <form class="w-75 mx-auto text-center pt-3" >
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Correo electrónico</label>
+      <input type="email" class="form-control w-75 mx-auto" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Tu mensaje</label>
+      <textarea class="form-control  w-75 mx-auto" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button class="btn btn-light px-5">
+      <a class="text-dark text-decoration-none" href="#">Enviar mensaje</a>
+    </button>
+  </form>
+</div>
+
+<!--****Footer****-->
+<footer class="bg-dark d-flex align-items-center" style="height: 90px;">
+  <p class="text-white mx-auto">
+    &copy;2021 <a href="https://github.com/Dante3056"> Dante Sollini</a>- Todos los derechos reservados
+  </p>
+</footer>
+  </div>
+  <!--***Archivos de JS usados a nivel local-->
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- *****Version CDN de js no usada*****
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+-->
+</body>
+
+</html>
