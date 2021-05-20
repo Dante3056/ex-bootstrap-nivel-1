@@ -1,9 +1,8 @@
 //variables
 const formulario = document.getElementsByClassName('formulario');
-const inputs = document.querySelectorAll('.formulario input');
+const inputs = document.getElementsByClassName('inputField'); 
 let pass1 = document.getElementById('inputPassword_2');
 let pass2 = document.getElementById('inputPassword_3');
-let provincia = document.getElementById('inputProvince');
 let searchBar = document.getElementById('inputSearch');
 let regex = {
     correo: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
@@ -17,7 +16,6 @@ document.querySelectorAll('.formulario').forEach(item => {
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].value === '' || inputs[i].value === false) {
                 inputs[i].classList.add('is-invalid');
-                provincia.classList.add('is-invalid');
             }
         }
         event.preventDefault();        
@@ -29,22 +27,21 @@ document.querySelectorAll('.formulario').forEach(item => {
         item.addEventListener('focusout', () => {
         for (i = 0; i < inputs.length; i++) {
            inputs[i].classList.remove('is-invalid');
-           provincia.classList.remove('is-invalid');
         }
     })
 })
+searchBar.addEventListener('focusout', ()=>{
+    searchBar.classList.remove('is-invalid');
+})
 //evento para validar campos
-inputs.forEach((input) => {
+Array.from(inputs).forEach((input) => {
+    input.addEventListener('submit', validarFormulario);
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
-    provincia.addEventListener('change', validarFormulario);
-    provincia.addEventListener('blur', validarFormulario);
     searchBar.addEventListener('change', validarFormulario);
-    searchBar.addEventListener('blur', validarFormulario);
+    searchBar.addEventListener('submit', validarFormulario);
     searchBar.addEventListener('keyup', validarFormulario);
-    searchBar.addEventListener('focusout', resetForm);
 })
-
 //funciones:Validacion de campos
 function validarFormulario(e) {
     switch (e.target.name) {
@@ -70,7 +67,7 @@ function validarFormulario(e) {
             break;
         case 'provincia':
             validarCampo(regex.required, e.target);
-            document.getElementById('errorProv').textContent = "el campo es obligatorio";
+            document.getElementById('errorProv').textContent = "el campo es obligatorio";        
             break;
         case 'search':
             validarCampo(regex.required, e.target);
@@ -78,7 +75,6 @@ function validarFormulario(e) {
             break;    
     }
 }
-
 //prueba de campo valido usando expresiones regulares
 const validarCampo = (expresion, input) => {
     if (expresion.test(input.value) == false) {
@@ -87,10 +83,3 @@ const validarCampo = (expresion, input) => {
         input.classList.remove('is-invalid');
     }
 }
-
-//funcion para resetear clases
-function resetForm() {
-    searchBar.classList.remove('is-invalid')
-    document.classList.remove('is-invalid');
-}
-
