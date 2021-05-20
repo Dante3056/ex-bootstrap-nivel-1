@@ -7,7 +7,7 @@ let searchBar = document.getElementById('inputSearch');
 let regex = {
     correo: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
     password: /^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/, //Almenos 8 caracteres una mayúscula y un número (Nivel 2)
-    required: /(?=.{3,})(?=.*[a-zA-Z0-9])///Almenos 3 letras como mínimo para iniciar la búsqueda.
+    required: /(?=.{3,})(?=.*[a-zA-Z0-9])/ //Almenos 3 letras como mínimo para iniciar la búsqueda.
 }
 //eventos: eventos submit
 document.querySelectorAll('.formulario').forEach(item => {
