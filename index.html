@@ -49,7 +49,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form class="formulario" method="GET" action="" id="loginForm">
+              <form class="formulario" action="success.html" method="GET" id="loginForm" name="loginForm">
                 <div class="form-group">
                   <label for="inputMail">Usuario o correo electrónico</label>
                   <input type="email" class="form-control inputField" name="correoLogin" id="inputMail"  placeholder="correo@ejemplo.com"/>
@@ -62,10 +62,7 @@
                   <small id="emailHelp" class="form-text text-muted">Olvidaste tu contraseña?
                     <a href="#" class="">Pincha aqui</a></small>
                 </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input inputField" name="checkbox" id="inputCheck" />
-                  <label class="form-check-label" for="inputCheck">Recordar mi cuenta</label>
-                </div>
+               
                 <button type="submit" class="btn btn-dark" id="btn_login">Accede</button>
               </form>
             </div>
@@ -86,12 +83,12 @@
               </button>
             </div>
             <div class="modal-body">
-            <form class="formulario" method="GET" action="" id="signupForm">
+            <form class="formulario"  action="success.html" method="GET" id="signupForm" name="signupForm">
                 <div class="form-group">
                   <label for="inputMail">Correo electrónico</label>
                   <input type="email" class="form-control inputField" id="inputMail" name="correoSignup" placeholder="correo@ejemplo.com" />
+                  <div class="invalid-feedback" id="errorMail_2"></div>
                 </div>
-                <div class="invalid-feedback" id="errorMail"></div>
                 <div class="form-group">
                   <label for="inputPassword">Contraseña
                     <small id="passwordHelp" class="form-text text-muted">
@@ -99,11 +96,12 @@
                     </small>
                   </label>
                   <input type="password" class="form-control inputField" id="inputPassword_2" name="signupPass" />
+                  <div class="invalid-feedback" id="errorPassword_2"></div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword_2">Confirma tu contraseña</label>
                   <input type="password" class="form-control inputField" id="inputPassword_3" name="signupPass2" />
-                  <div class="invalid-feedback" id="errorPassword_2"></div>
+                  <div class="invalid-feedback" id="errorPassword_3"></div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-5 pb-3">
@@ -162,8 +160,8 @@
 
         <!--****Barra de Búsqueda****-->
 
-        <form class="formulario form-inline from-sm my-2 my-lg-0" id="searchBar">
-          <input class="form-control mr-sm-2 my-3" type="search" placeholder="Busqueda" aria-label="Search" id="inputSearch" name="search"/>
+        <form class="formulario form-inline from-sm my-2 my-lg-0" id="searchBar" action="success.html" name="searchForm">
+          <input class="form-control mr-sm-2 my-3 inputField" type="search" placeholder="Busqueda" aria-label="Search" id="inputSearch" name="searchInput"/>
           <button class="btn btn-light my-2 my-sm-0" type="submit">
             Busca
           </button>
